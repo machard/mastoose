@@ -22,7 +22,7 @@ It supports **nested schemas, sub-models and aggregated/populated documents**.
 ##Initialisation
 You need to pass the mongoose instance you use.
 
-```
+```javascript
 var mastoose = new Mastoose(mongoose);
 ```
 
@@ -31,7 +31,7 @@ var mastoose = new Mastoose(mongoose);
 
 Given this model
 
-```
+```javascript
 var Model = mongoose.model('Model', new mongoose.Schema({
   ppte : String,
   ppte2 : String,
@@ -49,7 +49,7 @@ var Model = mongoose.model('Model', new mongoose.Schema({
 We define rules for Model and User
 
 
-```
+```javascript
 mastoose.addRule(Model, {
 	
   // define if this model can be accessed
@@ -98,7 +98,7 @@ mastoose.addRule(User, {...});
 
 You can pass any kind of documents/objects. Mastoose will apply the `exposes` rules accordingly.
 
-```
+```javascript
 var ctx = {user : user, ... };
 mastoose.expose(ctx, data, function(err, data_clean) {
   res.json(data_clean);
@@ -112,7 +112,7 @@ internally it uses the rule `access`. it will raise an error if a document in `d
 
 You can check if pending modifications of a document (new or not) are allowed by the rules. Based on Mongoose `isModified` property.
 
-```
+```javascript
 mastoose.allowsModification(ctx, doc, function(err, allowed) {
   if (allowed) {
     model.save();
@@ -124,7 +124,7 @@ mastoose.allowsModification(ctx, doc, function(err, allowed) {
 
 You can check if a method can be used
 
-```
+```javascript
 mastoose.allows(ctx, doc, 'method', function(err, allowed) {
   if (allowed) {
     model.save();
@@ -133,11 +133,11 @@ mastoose.allows(ctx, doc, 'method', function(err, allowed) {
 ```
 
 
-## Use it with Expoose
+## Use with Expoose
 
-- linking them
+- link them
 
-```
+```javascript
 var expoose = new Expoose(mongoose);
 
 // command checker
@@ -184,9 +184,9 @@ expoose.on('error', function(err, res) {
 });
 ```
 
-- using Expoose without worrying to make security mistakes
+- use Expoose without worrying to make security mistakes
 
-```
+```javascript
 server
   .get(
     '/users/:user_id',
