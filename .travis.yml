@@ -1,0 +1,9 @@
+language: node_js
+node_js:
+  - '0.10'
+before_script:
+  - npm install -g grunt-cli
+services:
+  - mongodb
+env:
+  - MASTOOSE_TEST_DB=mongodb://localhost/mastoose_test

@@ -1,0 +1,60 @@
+{
+  "name": "restifoosemq",
+  "version": "1.0.0",
+  "description": "Mastoose is a utility that helps to deal with exposition and modification rules for Mongoose documents",
+  "main": "src/mastoose.js",
+  "scripts": {
+    "test": "grunt test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/machard/mastoose.git"
+  },
+  "keywords": [
+    "mongoose",
+    "document",
+    "exposition",
+    "json",
+    "rules",
+    "modification",
+    "protection"
+  ],
+  "author": "Matthieu Achard",
+  "license": "ISC",
+  "config": {
+    "travis-cov": {
+      "threshold": 90
+    },
+    "blanket": {
+      "pattern": [
+        "src"
+      ],
+      "data-cover-never": [
+        "tests",
+        "node_modules"
+      ]
+    }
+  },
+  "dependencies": {
+    "appjector": "git://github.com/machard/appjector#develop",
+    "async": "0.9.0",
+    "bunyan": "1.2.3",
+    "es6-shim": "0.24.0",
+    "highland": "^2.4.0",
+    "lodash": "3.2.0",
+    "mongoose": "3.8.19",
+    "rabbit.js": "git://github.com/squaremo/rabbit.js#master",
+    "restify": "2.8.3",
+    "through2": "0.6.3"
+  },
+  "devDependencies": {
+    "grunt": "0.4.5",
+    "grunt-contrib-clean": "0.6.0",
+    "grunt-contrib-jshint": "0.11.0",
+    "grunt-contrib-watch": "0.6.1",
+    "grunt-mocha-cov": "0.3.0",
+    "matchdep": "0.3.0",
+    "mongoose": "3.8.23",
+    "travis-cov": "0.2.5"
+  }
+}
