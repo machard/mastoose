@@ -70,7 +70,7 @@ mastoose.addRule(Model, {
     }
   },    
   
-  // define which paths can be modified (by default all are)
+  // define which paths can be modified (by default all can)
   allowsModification : {
     ppte : false/true,
 
@@ -80,7 +80,7 @@ mastoose.addRule(Model, {
     }
   },
   
-  // define authorizations for calling methods (by default all are)
+  // define authorizations for calling methods (by default all can be called)
   allows : {
   	method1 : true/false,
   	method2 : function(ctx, callback) {
