@@ -1,6 +1,6 @@
 {
   "name": "mastoose",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "Mastoose is a utility that helps to deal with exposition and modification rules for Mongoose documents",
   "main": "src/mastoose.js",
   "scripts": {
